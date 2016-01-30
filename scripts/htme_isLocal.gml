@@ -31,8 +31,8 @@ for(var i=0; i<ds_map_size(global.htme_object.globalInstances); i+=1) {
     key = ds_map_find_next(global.htme_object.globalInstances, key);
 }
 if (go)
+*/ 
 
-*/
 
-    return self.htme_mp_player == global.htme_object.playerhash;
+ return self.htme_mp_player == global.htme_object.playerhash;
 //else return false;

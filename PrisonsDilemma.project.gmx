@@ -237,11 +237,13 @@
       <object>objects\htme_obj_netcontrol</object>
     </objects>
     <object>objects\obj_ground</object>
+    <object>objects\htme_obj_playerlist</object>
     <object>objects\obj_player</object>
     <object>objects\obj_door</object>
     <object>objects\obj_question</object>
     <object>objects\obj_text</object>
-    <object>objects\obj_Game</object>
+    <object>objects\obj_display</object>
+    <object>objects\htme_obj_chat</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\htme_rom_menu</room>
