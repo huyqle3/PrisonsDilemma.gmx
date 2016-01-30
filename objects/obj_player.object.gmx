@@ -35,6 +35,9 @@ self.pressed_k = false;
 self.status = "  TBD";
 self.points = 0;
 self.name = global.player_name;
+self.is_host = global.is_host;
+self.seconds = 1;
+self.minutes = 1;
 
 spd = 5;
 </string>
