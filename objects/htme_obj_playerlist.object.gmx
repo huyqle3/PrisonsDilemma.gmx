@@ -28,7 +28,7 @@
             <string>/// Draw player list
 
 draw_set_color(c_black);
-draw_text(40, 35, "Players:");
+draw_text(50, 35, "Players:");
 
 var playerlist = htme_getPlayers();
 var playerlist_size = ds_list_size(playerlist);

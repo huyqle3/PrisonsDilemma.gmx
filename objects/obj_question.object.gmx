@@ -30,7 +30,7 @@
     var str;
     str = "You have been chosen for the sacred trial. If you pass, you may escape hell and ascend back to earth. However, three others have been chosen as well. But only one may pass. The one with the highest score at the end of 5 rounds will triumph.";
     
-    scr_text(str, 1, 32, 384);
+    scr_text(str, 1, 32, 352);
 }
 else if (mouse_check_button_pressed(mb_left))
 {

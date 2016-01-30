@@ -80,7 +80,7 @@ if (time &lt; text_length)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Render text-box and text
+            <string>///Render text-box and text
 
 draw_set_alpha(alpha);
 
@@ -88,9 +88,9 @@ if (alpha &lt; 1) alpha += spd/10; else alpha = 1;
 
 draw_set_font(font);
 draw_set_color(c_gray);
-draw_rectangle(x,y,x+576,y+boxwidth,0);
+draw_rectangle(x,y,x+boxwidth,y+boxwidth,0);
 draw_set_color(c_black);
-draw_rectangle(x,y,x+576,y+boxwidth,1);
+draw_rectangle(x,y,x+boxwidth,y+boxwidth,1);
 
 draw_set_color(c_white);
 draw_set_halign(fa_left);
