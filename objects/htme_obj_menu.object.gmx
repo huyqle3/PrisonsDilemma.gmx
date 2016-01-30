@@ -28,6 +28,7 @@
             <string>if (keyboard_check_pressed(ord('C'))) {
     // Asks for port
     var port = real(get_string("Port: ", "6510"))
+    global.player_name = get_string("Your name: ", "");
     
     // Setup the server
     if (htme_serverStart(port, 32)) {
@@ -41,7 +42,8 @@
 if (keyboard_check_pressed(ord('J'))) {
     var ip = get_string("IP of server: ", "127.0.0.1")
     var port = real(get_string("Port: ", "6510"));
-    
+    global.player_name = get_string("Your name: ", "");
+        
     if (htme_clientStart(ip, port)) {
         room_goto(htme_rom_connecting);
     } else {
