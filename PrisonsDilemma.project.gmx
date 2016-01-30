@@ -5,9 +5,30 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_block</sprite>
+    <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\sprite3</sprite>
+    <sprite>sprites\char_idle</sprite>
+    <sprite>sprites\char_walk_up</sprite>
+    <sprite>sprites\char_walk_down</sprite>
+    <sprite>sprites\char_walk_right</sprite>
+    <sprite>sprites\char_walk_left</sprite>
+  </sprites>
+  <backgrounds name="background">
+    <background>background\background0</background>
+  </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\movement.gml</script>
+  </scripts>
+  <objects name="objects">
+    <object>objects\obj_wall</object>
+    <object>objects\obj_char1</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\main_room</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
