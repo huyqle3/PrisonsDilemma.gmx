@@ -8,8 +8,10 @@
   </NewExtensions>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_ground</sprite>
-    <sprite>sprites\spr_player</sprite>
+    <sprite>sprites\spr_player1</sprite>
+    <sprite>sprites\spr_player2</sprite>
+    <sprite>sprites\spr_player3</sprite>
+    <sprite>sprites\spr_player4</sprite>
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\sprite3</sprite>
@@ -239,12 +241,12 @@
     <object>objects\obj_door</object>
     <object>objects\obj_question</object>
     <object>objects\obj_text</object>
+    <object>objects\obj_Game</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\htme_rom_menu</room>
     <room>rooms\htme_rom_connecting</room>
     <room>rooms\rm_lvl_one</room>
-    <room>rooms\main_room</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
