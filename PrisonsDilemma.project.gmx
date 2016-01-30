@@ -19,6 +19,7 @@
     <sprite>sprites\char_walk_right</sprite>
     <sprite>sprites\char_walk_left</sprite>
     <sprite>sprites\spr_door</sprite>
+    <sprite>sprites\spr_question</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -219,7 +220,11 @@
       </scripts>
       <script>scripts\udphp_config.gml</script>
     </scripts>
+    <script>scripts\scr_text.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\font1</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_wall</object>
     <object>objects\obj_char1</object>
@@ -232,6 +237,8 @@
     <object>objects\obj_ground</object>
     <object>objects\obj_player</object>
     <object>objects\obj_door</object>
+    <object>objects\obj_question</object>
+    <object>objects\obj_text</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\htme_rom_menu</room>

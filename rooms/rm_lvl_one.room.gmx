@@ -117,6 +117,7 @@
     <instance objName="obj_wall" x="608" y="32" name="inst_730E88E2" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="608" y="0" name="inst_1E4F1366" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_door" x="288" y="0" name="inst_A4E1810E" locked="0" code="" scaleX="0.68085104227066" scaleY="0.695652186870575" colour="4294967295" rotation="0"/>
+    <instance objName="obj_question" x="544" y="0" name="inst_5E14D104" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="0" y="352" w="16" h="16" xo="0" yo="0" id="10000001" name="inst_09F2318C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
