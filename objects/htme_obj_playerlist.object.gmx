@@ -38,12 +38,20 @@ for (var i = 0; i&lt;playerlist_size; i++)
     var player = ds_list_find_value(playerlist, i);
     var instance = htme_findPlayerInstance(obj_player, player);
     
+    
+    var ready_str = "Not ready...";
     if (instance != -1)
     {
         var name = (instance).name;
         var status = (instance).status;
         var ready = (instance).ready;
         var _image_blend = (instance).image_blend;
+        
+        if (ready)
+        {
+            ready_str = "Ready";
+        }
+        
     }
     else
     {
@@ -56,15 +64,13 @@ for (var i = 0; i&lt;playerlist_size; i++)
     
     // Draw player name
     draw_set_colour(c_black);
-    draw_text(65+string_length(name)*3, (i)*20+62, name);
-    draw_text(65+string_length(name)*13, (i)*20+62, status);
+       
+    var print_str = name + "  -  " + ready_str;
+    draw_text(65+string_length(name)*3, (i)*20+62, print_str);
+    //draw_text(65+string_length(name)*13, (i)*20+62, status);
     
-    var ready_str = "Not ready...";
-    if (ready)
-    {
-        ready_str = "Ready";
-    }
-    draw_text(65+string_length(name)*30, (i)*20+62, ready_str);
+   
+    //draw_text(65+string_length(name)*30, (i)*20+62, ready_str);
 }
 </string>
           </argument>

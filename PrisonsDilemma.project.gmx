@@ -246,11 +246,7 @@
     <object>objects\obj_text</object>
     <object>objects\obj_display</object>
     <object>objects\htme_obj_chat</object>
-    <object>objects\obj_round_ctrl</object>
-    <object>objects\countdown</object>
-    <object>objects\obj_master_timer</object>
-    <object>objects\obj_host_timer</object>
-    <object>objects\obj_client_timer</object>
+    <object>objects\obj_ctrl_round</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\htme_rom_menu</room>

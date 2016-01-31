@@ -27,6 +27,10 @@
             <kind>1</kind>
             <string>self.group_size = 2;
 self.round_start = false;
+if (obj_player.is_host)
+{
+    htme_globalSet("round_start", self.round_start, buffer_bool);
+}
 </string>
           </argument>
         </arguments>
@@ -49,10 +53,8 @@ self.round_start = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (!obj_player.is_host)
+            <string>if (obj_player.is_host)
 {
-    exit;   
-}
 
 var ready_counter = 0;
 
@@ -67,23 +69,33 @@ for (var i = 0; i&lt;playerlist_size; i++)
     if (instance != -1)
     {
         var ready = (instance).ready;
+        
         if (ready)
         {
             ready_counter++;
         }
     }
-    else
-    {
-        var name = "(Other room)";
-        var _image_blend = c_gray;
-    }
+
 }
 
-if (group_size == ready_counter &amp;&amp; self.ready_start == false)
+
+if (ready_counter == self.group_size &amp;&amp; self.round_start == false)
 {
-    var timer_inst = instance_create(x, y, obj_master_timer);
-    ready_start = true;  
+    self.round_start = true;
+    htme_globalSet("round_start", self.round_start, buffer_bool);
 }
+
+}
+
+/*if (!obj_player.is_host)
+{
+    var round_start = htme_globalGet("round_start");
+    if (round_start)
+    {
+        // Start game
+    }
+}*/
+
 </string>
           </argument>
         </arguments>

@@ -27,8 +27,6 @@
             <kind>1</kind>
             <string>/// Display time
 
-show_debug_message("RECEIVING TIME FROM HOST");
-
 var seconds = htme_globalGet("seconds");
 var minutes = htme_globalGet("minutes");
 
@@ -43,7 +41,6 @@ draw_set_color(c_black);
 draw_set_halign(fa_center);
 draw_text(x,y, "Time: " + display_minutes + ":" + display_seconds);
 
-show_debug_message(obj_player.name + " Time: " + display_minutes + ":" + display_seconds);
 
 if (seconds == 0 &amp;&amp; minutes == 0)
 {
