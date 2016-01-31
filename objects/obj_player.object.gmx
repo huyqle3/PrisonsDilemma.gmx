@@ -44,6 +44,26 @@ self.points = 0;
 self.name = global.player_name;
 
 spd = 5;
+
+var spr_num = irandom_range(1, 4);
+
+if (spr_num == 1) 
+{
+    sprite_index = spr_player1;
+}
+else if (spr_num == 2)
+{
+    sprite_index = spr_player2;
+}
+else if (spr_num == 3)
+{
+    sprite_index = spr_player3;
+}
+else if (spr_num == 4)
+{
+    sprite_index = spr_player4;
+}
+ 
 </string>
           </argument>
         </arguments>
@@ -118,6 +138,7 @@ self.pressed_left = mp_map_syncOut("pressed_left", self.pressed_left);
 self.pressed_j = mp_map_syncOut("pressed_j", self.pressed_j);
 self.pressed_k = mp_map_syncOut("pressed_k", self.pressed_k);
 self.pressed_space = mp_map_syncOut("pressed_space", self.pressed_space);
+self.sprite_index = mp_map_syncOut("sprite_number", self.sprite_index);
 </string>
           </argument>
         </arguments>
@@ -158,6 +179,7 @@ mp_map_syncIn("pressed_right", self.pressed_right)
 mp_map_syncIn("pressed_j", self.pressed_j)
 mp_map_syncIn("pressed_k", self.pressed_k)
 mp_map_syncIn("pressed_space", self.pressed_space)
+mp_map_syncIn("sprite_number", self.sprite_index);
 </string>
           </argument>
         </arguments>
