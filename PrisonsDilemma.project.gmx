@@ -244,6 +244,7 @@
     <object>objects\obj_text</object>
     <object>objects\obj_display</object>
     <object>objects\htme_obj_chat</object>
+    <object>objects\countdown</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\htme_rom_menu</room>
