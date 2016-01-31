@@ -8,37 +8,6 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>self.group_size = 2;
-self.round_start = false;
-
-////////
-if (obj_player.is_host)
-{
-    htme_globalSet("round_start", self.round_start, buffer_bool);
-    htme_globalSet("round_end", false, buffer_bool);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -56,40 +25,10 @@ if (obj_player.is_host)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (obj_player.is_host)
+            <string>var round_end = htme_globalGet("round_end");
+
+if (round_end &amp;&amp; obj_player.is_host)
 {
-
-var ready_counter = 0;
-
-var playerlist = htme_getPlayers();
-var playerlist_size = ds_list_size(playerlist);
-
-for (var i = 0; i&lt;playerlist_size; i++)
-{
-    var player = ds_list_find_value(playerlist, i);
-    var instance = htme_findPlayerInstance(obj_player, player);
-    
-    if (instance != -1)
-    {
-        var ready = (instance).ready;
-        
-        if (ready)
-        {
-            ready_counter++;
-        }
-    }
-
-}
-
-
-
-if (ready_counter == self.group_size &amp;&amp; self.round_start == false)
-{
-    self.round_start = true;
-   // htme_globalSet("round_start", self.round_start, buffer_bool);
-
-    //var round_end = htme_globalGet("round_end");
-
     var playerlist = htme_getPlayers();
     var playerlist_size = ds_list_size(playerlist);
     var split = 0;
@@ -103,7 +42,6 @@ if (ready_counter == self.group_size &amp;&amp; self.round_start == false)
         if (instance != -1)
         {
             choices[i] = (instance).choice;
-            show_debug_message((instance).name + " - " + (instance).choice);
             if (choices[i] == "Split")
                 split++;
             else
@@ -144,15 +82,10 @@ if (ready_counter == self.group_size &amp;&amp; self.round_start == false)
                 continue;
         }
     }    
-
-        
-    
-    //htme_globalSet("round_end", true, buffer_bool);
-    
 }
 
-}
-
+htme_globalSet("round_end", false, buffer_bool);
+obj_ctrl_round.round_start = false;
 </string>
           </argument>
         </arguments>

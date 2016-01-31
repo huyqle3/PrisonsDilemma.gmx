@@ -37,13 +37,15 @@ for (var i = 0; i &lt; playerlist_size; i++) {
     
     
     var ready_str = "Not ready...";
+    var points = 0;
     if (instance != -1)
     {
         var name = (instance).name;
         var choice = (instance).choice;
         var ready = (instance).ready;
         var _image_blend = (instance).image_blend;
-        
+        var points = (instance).points;
+          
         if (ready)
         {
             ready_str = "Ready";
@@ -64,7 +66,7 @@ for (var i = 0; i &lt; playerlist_size; i++) {
     // Draw player name
     draw_set_colour(c_black);
        
-    var print_str = name + "  -  " + ready_str + "  -  " + choice;
+    var print_str = name + "  -  " + ready_str + "  -  " + choice + "  -  " + string(points);
     draw_text(65+string_length(name)*3, (i)*20+62, print_str);
    
 }

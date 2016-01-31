@@ -255,6 +255,7 @@
     <object>objects\htme_obj_door</object>
     <object>objects\Play</object>
     <object>objects\obj_fade</object>
+    <object>objects\obj_game_logic</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\pretitle_room</room>
