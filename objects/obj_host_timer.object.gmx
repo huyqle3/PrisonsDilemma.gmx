@@ -28,8 +28,8 @@
             <string>/// Set timer for 1 minute
 
 // Set start time
-seconds = 5;
-minutes = 5;
+seconds = 0;
+minutes = 1;
 
 // Alarm goes off every second
 alarm[0]=room_speed;

@@ -32,12 +32,12 @@ self.pressed_right = false;
 self.pressed_left = false;
 self.pressed_j = false;
 self.pressed_k = false;
+self.pressed_space = false;
 self.status = "  TBD";
 self.points = 0;
 self.name = global.player_name;
 self.is_host = global.is_host;
-self.seconds = 1;
-self.minutes = 1;
+self.ready = false;
 
 spd = 5;
 </string>
@@ -79,8 +79,10 @@ mp_add("playerName", "name", buffer_string, 60*room_speed);
 mp_setType("playerName", mp_type.SMART);
 mp_add("playerChoice", "status", buffer_string, 60*room_speed);
 mp_setType("playerChoice", mp_type.SMART);
+mp_add("playerReady", "ready", buffer_bool, 60*room_speed);
+mp_setType("playerReady", mp_type.SMART);
 
-mp_add("controls", "pressed_up,pressed_down,pressed_left,pressed_right,pressed_j,pressed_k", buffer_bool, 1)
+mp_add("controls", "pressed_up,pressed_down,pressed_left,pressed_right,pressed_j,pressed_k,pressed_space", buffer_bool, 1)
 
 </string>
           </argument>
@@ -111,6 +113,7 @@ self.pressed_right = mp_map_syncOut("pressed_right", self.pressed_right);
 self.pressed_left = mp_map_syncOut("pressed_left", self.pressed_left);
 self.pressed_j = mp_map_syncOut("pressed_j", self.pressed_j);
 self.pressed_k = mp_map_syncOut("pressed_k", self.pressed_k);
+self.pressed_space = mp_map_syncOut("pressed_space", self.pressed_space);
 </string>
           </argument>
         </arguments>
@@ -140,6 +143,7 @@ self.pressed_k = mp_map_syncOut("pressed_k", self.pressed_k);
     self.pressed_right = keyboard_check(ord('D'));
     self.pressed_j = keyboard_check(ord('J'));
     self.pressed_k = keyboard_check(ord('K'));
+    self.pressed_space = keyboard_check(vk_space);
 }
 
 mp_map_syncIn("name", self.name)
@@ -149,6 +153,7 @@ mp_map_syncIn("pressed_left", self.pressed_left)
 mp_map_syncIn("pressed_right", self.pressed_right)
 mp_map_syncIn("pressed_j", self.pressed_j)
 mp_map_syncIn("pressed_k", self.pressed_k)
+mp_map_syncIn("pressed_space", self.pressed_space)
 </string>
           </argument>
         </arguments>
@@ -194,6 +199,10 @@ if (self.pressed_j) {
 
 if (self.pressed_k) {
     self.status = "Steal";
+}
+
+if (self.pressed_space) {
+    self.ready = true;
 }
 </string>
           </argument>

@@ -14,6 +14,7 @@
     <sprite>sprites\spr_player4</sprite>
     <sprite>sprites\spr_block</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_altar</sprite>
     <sprite>sprites\sprite3</sprite>
     <sprite>sprites\char_idle</sprite>
     <sprite>sprites\char_walk_up</sprite>
@@ -238,12 +239,14 @@
     </objects>
     <object>objects\obj_ground</object>
     <object>objects\htme_obj_playerlist</object>
+    <object>objects\obj_altar</object>
     <object>objects\obj_player</object>
     <object>objects\obj_door</object>
     <object>objects\obj_question</object>
     <object>objects\obj_text</object>
     <object>objects\obj_display</object>
     <object>objects\htme_obj_chat</object>
+    <object>objects\obj_round_ctrl</object>
     <object>objects\countdown</object>
     <object>objects\obj_master_timer</object>
     <object>objects\obj_host_timer</object>
