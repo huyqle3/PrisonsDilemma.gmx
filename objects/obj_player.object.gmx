@@ -38,7 +38,8 @@ self.name = global.player_name;
 self.is_host = global.is_host;
 self.seconds = 1;
 self.minutes = 1;
-
+self.choice = false;
+self.points = 0;
 spd = 5;
 </string>
           </argument>
@@ -111,6 +112,8 @@ self.pressed_right = mp_map_syncOut("pressed_right", self.pressed_right);
 self.pressed_left = mp_map_syncOut("pressed_left", self.pressed_left);
 self.pressed_j = mp_map_syncOut("pressed_j", self.pressed_j);
 self.pressed_k = mp_map_syncOut("pressed_k", self.pressed_k);
+self.choice = mp_map_syncOut("choice", self.choice);
+self.points = mp_map_syncOut("points", self.points);
 </string>
           </argument>
         </arguments>
@@ -149,6 +152,8 @@ mp_map_syncIn("pressed_left", self.pressed_left)
 mp_map_syncIn("pressed_right", self.pressed_right)
 mp_map_syncIn("pressed_j", self.pressed_j)
 mp_map_syncIn("pressed_k", self.pressed_k)
+mp_map_syncIn("choice", self.choice)
+mp_map_syncIn("points", self.points)
 </string>
           </argument>
         </arguments>
@@ -190,10 +195,12 @@ if (self.pressed_right) {
 
 if (self.pressed_j) {
     self.status = "Split";
+    self.choice = false;
 }
 
 if (self.pressed_k) {
     self.status = "Steal";
+    self.choice = true;
 }
 </string>
           </argument>
@@ -217,7 +224,23 @@ if (self.pressed_k) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>//draw rectangle with personal score
+draw_set_font(font1);
+draw_set_color(c_gray);
+draw_rectangle(352,50,500,90,0);
+draw_set_color(c_black);
+str_score = "Your score is: " + string(self.points);
+draw_text_ext(
+424, //x
+50, //y 
+str_score, //str
+11+(11/2), //font spacing
+120 //length of each str line
+);
+
+
+//draw self with name/status
+draw_self();
 
 draw_set_color(c_black);
 draw_set_halign(fa_center);
