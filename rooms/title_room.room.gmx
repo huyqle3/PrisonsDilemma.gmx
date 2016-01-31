@@ -51,7 +51,7 @@
     <view visible="0" objName="&lt;undefined&gt;" xview="0" yview="0" wview="1024" hview="768" xport="0" yport="0" wport="1024" hport="768" hborder="32" vborder="32" hspeed="-1" vspeed="-1"/>
   </views>
   <instances>
-    <instance objName="Play" x="128" y="384" name="inst_FB5A8107" locked="0" code="" scaleX="11" scaleY="2" colour="1358954495" rotation="0"/>
+    <instance objName="play_title_screen" x="128" y="385" name="inst_B4AFF225" locked="0" code="" scaleX="11" scaleY="2" colour="1694498815" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

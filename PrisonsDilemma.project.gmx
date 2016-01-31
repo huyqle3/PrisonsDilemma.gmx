@@ -314,6 +314,7 @@
     <object>objects\countdown</object>
     <object>objects\htme_obj_door</object>
     <object>objects\Play</object>
+    <object>objects\play_title_screen</object>
     <object>objects\obj_fade</object>
     <object>objects\obj_game_logic</object>
     <object>objects\obj_icy_ground_left_8</object>
