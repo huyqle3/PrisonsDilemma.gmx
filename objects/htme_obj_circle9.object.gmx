@@ -8,55 +8,6 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (keyboard_check_pressed(ord('C'))) {
-    // Asks for port
-    var port = real(get_string("Port: ", "6510"))
-    global.player_name = get_string("Your name: ", "");
-    global.is_host = true;
-    
-    // Setup the server
-    if (htme_serverStart(port, 32)) {
-        room_goto(rm_lvl_one);
-    } else {
-        show_message("Failed to start server.")
-        game_end();
-    }
-}
-
-if (keyboard_check_pressed(ord('J'))) {
-    var ip = get_string("IP of server: ", "127.0.0.1")
-    var port = real(get_string("Port: ", "6510"));
-    global.player_name = get_string("Your name: ", "");
-    global.is_host = false;    
-    
-    if (htme_clientStart(ip, port)) {
-        room_goto(htme_rom_connecting);
-    } else {
-        show_message("Failed to start client.")
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -74,7 +25,41 @@ if (keyboard_check_pressed(ord('J'))) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_text(x,y,"Press 'J' to join a server or 'C' to create one.")
+            <string>/// Draw split/steal charts
+
+draw_set_color(c_black);
+draw_text(50, 35, "Players:");
+
+var playerlist = htme_getPlayers();
+var playerlist_size = ds_list_size(playerlist);
+
+for (var i = 0; i&lt;playerlist_size; i++)
+{
+    var player = ds_list_find_value(playerlist, i);
+    var instance = htme_findPlayerInstance(obj_player, player);
+    
+    if (instance != -1)
+    {
+        var name = (instance).name;
+        var split = (instance).split;
+        var steal = (instance).steal;
+        var _image_blend = (instance).image_blend;
+    }
+    else
+    {
+        var name = "(Other room)";
+        var _image_blend = c_gray;
+    }
+    
+    // Draw small player icon
+    draw_sprite_ext(spr_player1, 0, 50, (i)*20+70, 0.5, 0.5, 0, _image_blend, 1);
+    
+    // Draw player name
+    draw_set_colour(c_black);
+    draw_text(70, (i)*20+62, name);
+    draw_text(70, (i)*20+72, name);
+    draw_text(70, (i)*20+82, name);
+}
 </string>
           </argument>
         </arguments>

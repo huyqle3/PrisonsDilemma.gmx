@@ -30,7 +30,14 @@ self.pressed_down = false;
 self.pressed_jump = false;
 self.pressed_right = false;
 self.pressed_left = false;
+self.pressed_j = false;
+self.pressed_k = false;
+self.status = "  TBD";
+self.points = 0;
 self.name = global.player_name;
+self.is_host = global.is_host;
+self.seconds = 1;
+self.minutes = 1;
 
 spd = 5;
 </string>
@@ -70,8 +77,10 @@ mp_setType("basicPhysics", mp_type.SMART);
 
 mp_add("playerName", "name", buffer_string, 60*room_speed);
 mp_setType("playerName", mp_type.SMART);
+mp_add("playerChoice", "status", buffer_string, 60*room_speed);
+mp_setType("playerChoice", mp_type.SMART);
 
-mp_add("controls", "pressed_up,pressed_down,pressed_left,pressed_right", buffer_bool, 1)
+mp_add("controls", "pressed_up,pressed_down,pressed_left,pressed_right,pressed_j,pressed_k", buffer_bool, 1)
 
 </string>
           </argument>
@@ -100,6 +109,8 @@ self.pressed_up = mp_map_syncOut("pressed_up", self.pressed_up);
 self.pressed_down = mp_map_syncOut("pressed_down", self.pressed_down);
 self.pressed_right = mp_map_syncOut("pressed_right", self.pressed_right);
 self.pressed_left = mp_map_syncOut("pressed_left", self.pressed_left);
+self.pressed_j = mp_map_syncOut("pressed_j", self.pressed_j);
+self.pressed_k = mp_map_syncOut("pressed_k", self.pressed_k);
 </string>
           </argument>
         </arguments>
@@ -127,6 +138,8 @@ self.pressed_left = mp_map_syncOut("pressed_left", self.pressed_left);
     self.pressed_down = keyboard_check(ord('S'));
     self.pressed_left = keyboard_check(ord('A'));
     self.pressed_right = keyboard_check(ord('D'));
+    self.pressed_j = keyboard_check(ord('J'));
+    self.pressed_k = keyboard_check(ord('K'));
 }
 
 mp_map_syncIn("name", self.name)
@@ -134,6 +147,8 @@ mp_map_syncIn("pressed_up", self.pressed_up)
 mp_map_syncIn("pressed_down", self.pressed_down)
 mp_map_syncIn("pressed_left", self.pressed_left)
 mp_map_syncIn("pressed_right", self.pressed_right)
+mp_map_syncIn("pressed_j", self.pressed_j)
+mp_map_syncIn("pressed_k", self.pressed_k)
 </string>
           </argument>
         </arguments>
@@ -156,19 +171,29 @@ mp_map_syncIn("pressed_right", self.pressed_right)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/* Movement */
+            <string>// Movement
 
 if (self.pressed_up) {
-    y = y - spd
+    y = y - spd;
 }
 if (self.pressed_down) {
-    y = y + spd
+    y = y + spd;
 } 
 if (self.pressed_left){
-    x = x - spd
+    x = x - spd;
 }
 if (self.pressed_right) {
-    x = x + spd
+    x = x + spd;
+}
+
+// Player choice
+
+if (self.pressed_j) {
+    self.status = "Split";
+}
+
+if (self.pressed_k) {
+    self.status = "Steal";
 }
 </string>
           </argument>
@@ -197,6 +222,7 @@ if (self.pressed_right) {
 draw_set_color(c_black);
 draw_set_halign(fa_center);
 draw_text(x,y-35,self.name);
+draw_text(x,y-50,self.status);
 </string>
           </argument>
         </arguments>

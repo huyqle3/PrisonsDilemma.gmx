@@ -167,7 +167,7 @@ self.lan_interval = 15*room_speed;
  * Also change this string when releasing a new version of your game, that is incompatible
  * with old versions of your game.
  **/
-self.gamename = "gmnet_engine_130"
+self.gamename = "prisoners_dilemma"
 
 /*** 
  *** BELOW: INIT INTERNAL VARIABLES - DO NOT CHANGE 
