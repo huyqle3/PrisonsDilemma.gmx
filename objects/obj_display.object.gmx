@@ -26,27 +26,35 @@
           <argument>
             <kind>1</kind>
             <string>/*Screen Bullshit*/
-/*
+
 window_set_fullscreen(false)
 
 //How big is the screen?
-ScreenWidth = display_get_width()
-ScreenHeight = display_get_height()
+// ScreenWidth = display_get_width()
+// ScreenHeight = display_get_height()
 
 //Set size of window
 window_set_size(ScreenWidth,ScreenHeight)
+// window_set_size(640, 480)
 
 //How much of the room do we want on-screen?
-view_wview = ScreenWidth
-view_hview = ScreenHeight
+// view_wview = ScreenWidth
+// view_hview = ScreenHeight
+// view_wview = 640
+// view_hview = 480
+// This sets it up so that the camera is exactly in the middle of the screen at all times, regardless of zoom.
+view_xview[0] = x - view_wview / 2
+view_yview[0] = y - view_hview / 2
 
 //How much of our screen do we want that to take up?
-view_wport = ScreenWidth
-view_hport = ScreenHeight
+// view_wport = ScreenWidth
+// view_hport = ScreenHeight
+// view_wport = 640
+// view_hport = 480
 
 //Some weird GameMaker bullshit
-surface_resize(application_surface, ScreenWidth, ScreenHeight)
-*/
+// surface_resize(application_surface, ScreenWidth, ScreenHeight)
+// surface_resize(application_surface, 640, 480)
 </string>
           </argument>
         </arguments>

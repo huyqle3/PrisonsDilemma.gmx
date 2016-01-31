@@ -116,7 +116,7 @@
     <instance objName="obj_question" x="544" y="32" name="inst_5E14D104" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="htme_obj_chat" x="32" y="448" name="inst_5B467E4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="htme_obj_playerlist" x="0" y="32" name="inst_CED5ABB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="160" y="224" name="inst_983C4334" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="160" y="224" name="inst_983C4334" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="640" y="480" name="inst_5119D3FE" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="480" name="inst_0EDFE9DE" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="192" y="480" name="inst_06842360" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
@@ -167,7 +167,7 @@
     <instance objName="obj_wall" x="64" y="480" name="inst_867BF19A" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="32" y="480" name="inst_CC5EDBC0" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_master_timer" x="256" y="64" name="inst_26C9A0F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="htme_obj_door" x="544" y="384" name="inst_7B7EA2DA" locked="0" code="" scaleX="0.307692319154739" scaleY="0.384615391492844" colour="4294967295" rotation="0"/>
+    <instance objName="htme_obj_door" x="288" y="288" name="inst_7B7EA2DA" locked="0" code="" scaleX="0.307692319154739" scaleY="0.384615391492844" colour="4294967295" rotation="0"/>
     <instance objName="htme_obj_netcontrol" x="64" y="448" name="inst_7029AFCC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
