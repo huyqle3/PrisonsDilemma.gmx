@@ -22,6 +22,7 @@
     <sprite>sprites\char_walk_left</sprite>
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_question</sprite>
+    <sprite>sprites\htme_spr_door</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -239,7 +240,6 @@
     <object>objects\obj_ground</object>
     <object>objects\htme_obj_playerlist</object>
     <object>objects\obj_player</object>
-    <object>objects\obj_door</object>
     <object>objects\obj_question</object>
     <object>objects\obj_text</object>
     <object>objects\obj_display</object>
@@ -248,11 +248,13 @@
     <object>objects\obj_master_timer</object>
     <object>objects\obj_host_timer</object>
     <object>objects\obj_client_timer</object>
+    <object>objects\htme_obj_door</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\htme_rom_menu</room>
     <room>rooms\htme_rom_connecting</room>
     <room>rooms\rm_lvl_one</room>
+    <room>rooms\rm_lvl_two</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

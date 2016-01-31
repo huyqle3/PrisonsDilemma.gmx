@@ -3,8 +3,8 @@
   <spriteName>spr_player1</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
-  <persistent>0</persistent>
+  <depth>-5</depth>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -32,12 +32,12 @@ self.pressed_right = false;
 self.pressed_left = false;
 self.pressed_j = false;
 self.pressed_k = false;
-self.status = "  TBD";
+self.choice = "TBD";
 self.points = 0;
-self.name = global.player_name;
 self.is_host = global.is_host;
 self.seconds = 1;
 self.minutes = 1;
+self.name = global.player_name;
 
 spd = 5;
 </string>
@@ -77,7 +77,7 @@ mp_setType("basicPhysics", mp_type.SMART);
 
 mp_add("playerName", "name", buffer_string, 60*room_speed);
 mp_setType("playerName", mp_type.SMART);
-mp_add("playerChoice", "status", buffer_string, 60*room_speed);
+mp_add("playerChoice", "choice", buffer_string, 60*room_speed);
 mp_setType("playerChoice", mp_type.SMART);
 
 mp_add("controls", "pressed_up,pressed_down,pressed_left,pressed_right,pressed_j,pressed_k", buffer_bool, 1)
@@ -189,11 +189,11 @@ if (self.pressed_right) {
 // Player choice
 
 if (self.pressed_j) {
-    self.status = "Split";
+    self.choice = "Split";
 }
 
 if (self.pressed_k) {
-    self.status = "Steal";
+    self.choice = "Steal";
 }
 </string>
           </argument>
@@ -222,7 +222,7 @@ if (self.pressed_k) {
 draw_set_color(c_black);
 draw_set_halign(fa_center);
 draw_text(x,y-35,self.name);
-draw_text(x,y-50,self.status);
+draw_text(x,y-50,self.choice);
 </string>
           </argument>
         </arguments>

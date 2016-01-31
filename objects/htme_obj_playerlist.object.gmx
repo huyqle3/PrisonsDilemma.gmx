@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-200</depth>
   <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,28 +25,23 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// Draw player list
-
-draw_set_color(c_black);
+            <string>draw_set_color(c_black);
 draw_text(50, 35, "Players:");
 
 var playerlist = htme_getPlayers();
 var playerlist_size = ds_list_size(playerlist);
 
-for (var i = 0; i&lt;playerlist_size; i++)
-{
+for (var i = 0; i &lt; playerlist_size; i++) {
     var player = ds_list_find_value(playerlist, i);
     var instance = htme_findPlayerInstance(obj_player, player);
     
-    if (instance != -1)
-    {
+    if (instance != -1) {
         var name = (instance).name;
-        var status = (instance).status;
+        var choice = (instance).choice;
         var _image_blend = (instance).image_blend;
-    }
-    else
-    {
+    } else {
         var name = "(Other room)";
+        var choice = "TBD";
         var _image_blend = c_gray;
     }
     
@@ -56,7 +51,7 @@ for (var i = 0; i&lt;playerlist_size; i++)
     // Draw player name
     draw_set_colour(c_black);
     draw_text(65+string_length(name)*3, (i)*20+62, name);
-    draw_text(65+string_length(name)*13, (i)*20+62, status);
+    draw_text(65+string_length(name)*13, (i)*20+62, choice);
 }
 </string>
           </argument>
