@@ -23,9 +23,12 @@
     <sprite>sprites\spr_door</sprite>
     <sprite>sprites\spr_question</sprite>
     <sprite>sprites\htme_spr_door</sprite>
+    <sprite>sprites\spr_click_tile</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
+    <background>background\pretitle_bg</background>
+    <background>background\title_bg</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -249,8 +252,12 @@
     <object>objects\obj_host_timer</object>
     <object>objects\obj_client_timer</object>
     <object>objects\htme_obj_door</object>
+    <object>objects\Play</object>
+    <object>objects\obj_fade</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\pretitle_room</room>
+    <room>rooms\title_room</room>
     <room>rooms\htme_rom_menu</room>
     <room>rooms\htme_rom_connecting</room>
     <room>rooms\rm_lvl_one</room>
