@@ -3,8 +3,8 @@
   <spriteName>spr_player1</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
-  <persistent>0</persistent>
+  <depth>-5</depth>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -32,12 +32,17 @@ self.pressed_right = false;
 self.pressed_left = false;
 self.pressed_j = false;
 self.pressed_k = false;
+self.pressed_space = false;
 self.status = "  TBD";
+self.choice = "TBD";
 self.points = 0;
-self.name = global.player_name;
 self.is_host = global.is_host;
+self.ready = false;
 self.seconds = 1;
 self.minutes = 1;
+self.choice = false;
+self.points = 0;
+self.name = global.player_name;
 
 spd = 5;
 </string>
@@ -77,10 +82,12 @@ mp_setType("basicPhysics", mp_type.SMART);
 
 mp_add("playerName", "name", buffer_string, 60*room_speed);
 mp_setType("playerName", mp_type.SMART);
-mp_add("playerChoice", "status", buffer_string, 60*room_speed);
+mp_add("playerChoice", "choice", buffer_string, 60*room_speed);
 mp_setType("playerChoice", mp_type.SMART);
+mp_add("playerReady", "ready", buffer_bool, 60*room_speed);
+mp_setType("playerReady", mp_type.SMART);
 
-mp_add("controls", "pressed_up,pressed_down,pressed_left,pressed_right,pressed_j,pressed_k", buffer_bool, 1)
+mp_add("controls", "pressed_up,pressed_down,pressed_left,pressed_right,pressed_j,pressed_k,pressed_space", buffer_bool, 1)
 
 </string>
           </argument>
@@ -111,6 +118,9 @@ self.pressed_right = mp_map_syncOut("pressed_right", self.pressed_right);
 self.pressed_left = mp_map_syncOut("pressed_left", self.pressed_left);
 self.pressed_j = mp_map_syncOut("pressed_j", self.pressed_j);
 self.pressed_k = mp_map_syncOut("pressed_k", self.pressed_k);
+self.choice = mp_map_syncOut("choice", self.choice);
+self.points = mp_map_syncOut("points", self.points);
+self.pressed_space = mp_map_syncOut("pressed_space", self.pressed_space);
 </string>
           </argument>
         </arguments>
@@ -140,6 +150,7 @@ self.pressed_k = mp_map_syncOut("pressed_k", self.pressed_k);
     self.pressed_right = keyboard_check(ord('D'));
     self.pressed_j = keyboard_check(ord('J'));
     self.pressed_k = keyboard_check(ord('K'));
+    self.pressed_space = keyboard_check(vk_space);
 }
 
 mp_map_syncIn("name", self.name)
@@ -149,6 +160,9 @@ mp_map_syncIn("pressed_left", self.pressed_left)
 mp_map_syncIn("pressed_right", self.pressed_right)
 mp_map_syncIn("pressed_j", self.pressed_j)
 mp_map_syncIn("pressed_k", self.pressed_k)
+mp_map_syncIn("choice", self.choice)
+mp_map_syncIn("points", self.points)
+mp_map_syncIn("pressed_space", self.pressed_space)
 </string>
           </argument>
         </arguments>
@@ -190,10 +204,15 @@ if (self.pressed_right) {
 
 if (self.pressed_j) {
     self.status = "Split";
+    self.choice = false;
 }
 
 if (self.pressed_k) {
     self.status = "Steal";
+    self.choice = true;
+
+if (self.pressed_space) {
+    self.ready = true;
 }
 </string>
           </argument>
@@ -217,12 +236,28 @@ if (self.pressed_k) {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self();
+            <string>//draw rectangle with personal score
+draw_set_font(font1);
+draw_set_color(c_gray);
+draw_rectangle(352,50,500,90,0);
+draw_set_color(c_black);
+str_score = "Your score is: " + string(self.points);
+draw_text_ext(
+424, //x
+50, //y 
+str_score, //str
+11+(11/2), //font spacing
+120 //length of each str line
+);
+
+
+//draw self with name/status
+draw_self();
 
 draw_set_color(c_black);
 draw_set_halign(fa_center);
 draw_text(x,y-35,self.name);
-draw_text(x,y-50,self.status);
+draw_text(x,y-50,self.choice);
 </string>
           </argument>
         </arguments>
