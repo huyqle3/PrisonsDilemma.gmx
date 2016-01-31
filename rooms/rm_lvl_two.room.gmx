@@ -113,9 +113,6 @@
     <instance objName="obj_wall" x="0" y="0" name="inst_B8051AC0" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="640" y="32" name="inst_730E88E2" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="640" y="0" name="inst_1E4F1366" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
-    <instance objName="obj_question" x="544" y="32" name="inst_5E14D104" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="htme_obj_chat" x="32" y="448" name="inst_5B467E4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="160" y="224" name="inst_983C4334" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="640" y="480" name="inst_5119D3FE" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="0" y="480" name="inst_0EDFE9DE" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="192" y="480" name="inst_06842360" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
@@ -165,14 +162,7 @@
     <instance objName="obj_wall" x="96" y="480" name="inst_B1D8796E" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="64" y="480" name="inst_867BF19A" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="32" y="480" name="inst_CC5EDBC0" locked="0" code="" scaleX="0.5" scaleY="0.5" colour="4294967295" rotation="0"/>
-    <instance objName="obj_altar" x="256" y="160" name="inst_32E42258" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_altar" x="448" y="160" name="inst_FCD70187" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_altar" x="448" y="352" name="inst_469ED5B9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_altar" x="256" y="352" name="inst_AEB9BA42" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_ctrl_round" x="448" y="64" name="inst_823D2C88" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="htme_obj_door" x="544" y="384" name="inst_7B7EA2DA" locked="0" code="" scaleX="0.307692319154739" scaleY="0.384615391492844" colour="4294967295" rotation="0"/>
-    <instance objName="htme_obj_netcontrol" x="64" y="448" name="inst_7029AFCC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="htme_obj_playerlist" x="64" y="32" name="inst_95B6DCA7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="htme_obj_netcontrol" x="96" y="416" name="inst_230FCE63" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="" x="0" y="352" w="16" h="16" xo="0" yo="0" id="10000001" name="inst_09F2318C" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
