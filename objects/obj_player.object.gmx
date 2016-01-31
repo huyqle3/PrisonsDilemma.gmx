@@ -33,14 +33,12 @@ self.pressed_left = false;
 self.pressed_j = false;
 self.pressed_k = false;
 self.pressed_space = false;
-self.status = "  TBD";
 self.choice = "TBD";
 self.points = 0;
 self.is_host = global.is_host;
 self.ready = false;
 self.seconds = 1;
 self.minutes = 1;
-self.choice = false;
 self.points = 0;
 self.name = global.player_name;
 
@@ -189,28 +187,35 @@ mp_map_syncIn("pressed_space", self.pressed_space)
 
 if (self.pressed_up) {
     y = y - spd;
+    image_speed = 0.05;
 }
 if (self.pressed_down) {
     y = y + spd;
+    image_speed = 0.05;
 } 
 if (self.pressed_left){
     x = x - spd;
+    image_speed = 0.05;
 }
 if (self.pressed_right) {
     x = x + spd;
+    image_speed = 0.05;
+}
+
+if (keyboard_check(vk_nokey)){
+    image_speed = 0.05;
 }
 
 // Player choice
 
 if (self.pressed_j) {
-    self.status = "Split";
-    self.choice = false;
+    self.choice = "Split";
 }
 
 if (self.pressed_k) {
-    self.status = "Steal";
-    self.choice = true;
-
+    self.choice = "Steal";
+}
+    
 if (self.pressed_space) {
     self.ready = true;
 }

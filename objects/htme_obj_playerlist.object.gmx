@@ -54,6 +54,7 @@ for (var i = 0; i &lt; playerlist_size; i++) {
     {
         var name = "(Other room)";
         var choice = "TBD";
+        var ready = "TBD";
         var _image_blend = c_gray;
     }
     

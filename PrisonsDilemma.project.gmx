@@ -25,6 +25,7 @@
     <sprite>sprites\spr_question</sprite>
     <sprite>sprites\htme_spr_door</sprite>
     <sprite>sprites\spr_click_tile</sprite>
+    <sprite>sprites\sprite14</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
