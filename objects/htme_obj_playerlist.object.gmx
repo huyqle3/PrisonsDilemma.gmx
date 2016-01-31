@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_color(c_black);
+            <string>draw_set_color(c_white);
 draw_text(50, 35, "Players:");
 
 var playerlist = htme_getPlayers();
@@ -57,17 +57,21 @@ for (var i = 0; i &lt; playerlist_size; i++) {
         var name = "(Other room)";
         var choice = "TBD";
         var ready = "TBD";
-        var _image_blend = c_gray;
+        var _image_blend = c_white;
     }
     
     // Draw small player icon
     draw_sprite_ext(spr_player1, 0, 50, (i)*20+70, 0.5, 0.5, 0, _image_blend, 1);
     
     // Draw player name
-    draw_set_colour(c_black);
+    draw_set_colour(c_white);
        
     var print_str = name + "  -  " + ready_str + "  -  " + choice + "  -  " + string(points);
-    draw_text(65+string_length(name)*3, (i)*20+62, print_str);
+    if (room == 5){
+        draw_text(90+string_length(name)*3, (i)*20+62, name + "  -  " + string(points));    
+    } else {
+        draw_text(180+string_length(name)*3, (i)*20+62, print_str);
+    }
    
 }
 </string>

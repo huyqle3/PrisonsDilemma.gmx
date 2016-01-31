@@ -36,6 +36,7 @@ self.pressed_space = false;
 self.choice = "TBD";
 self.points = 0;
 self.is_host = global.is_host;
+self.is_dead = false;
 self.ready = false;
 self.seconds = 1;
 self.minutes = 1;
@@ -116,8 +117,6 @@ self.pressed_right = mp_map_syncOut("pressed_right", self.pressed_right);
 self.pressed_left = mp_map_syncOut("pressed_left", self.pressed_left);
 self.pressed_j = mp_map_syncOut("pressed_j", self.pressed_j);
 self.pressed_k = mp_map_syncOut("pressed_k", self.pressed_k);
-self.choice = mp_map_syncOut("choice", self.choice);
-self.points = mp_map_syncOut("points", self.points);
 self.pressed_space = mp_map_syncOut("pressed_space", self.pressed_space);
 </string>
           </argument>
@@ -158,8 +157,6 @@ mp_map_syncIn("pressed_left", self.pressed_left)
 mp_map_syncIn("pressed_right", self.pressed_right)
 mp_map_syncIn("pressed_j", self.pressed_j)
 mp_map_syncIn("pressed_k", self.pressed_k)
-mp_map_syncIn("choice", self.choice)
-mp_map_syncIn("points", self.points)
 mp_map_syncIn("pressed_space", self.pressed_space)
 </string>
           </argument>
@@ -185,14 +182,6 @@ mp_map_syncIn("pressed_space", self.pressed_space)
             <kind>1</kind>
             <string>// Movement
 
-if (self.pressed_up) {
-    y = y - spd;
-    image_speed = 0.05;
-}
-if (self.pressed_down) {
-    y = y + spd;
-    image_speed = 0.05;
-} 
 if (self.pressed_left){
     x = x - spd;
     image_speed = 0.05;
@@ -206,18 +195,67 @@ if (keyboard_check(vk_nokey)){
     image_speed = 0.05;
 }
 
-// Player choice
-
-if (self.pressed_j) {
-    self.choice = "Split";
-}
-
-if (self.pressed_k) {
-    self.choice = "Steal";
-}
+if (room == 5) {
+    if(place_free(x, y+1)){
+        gravity = 0.5;
+    } else {
+        gravity = 0;
+        vspeed = 0;
+    }
     
-if (self.pressed_space) {
-    self.ready = true;
+    if (self.pressed_up &amp;&amp; place_meeting(x, y+1, obj_icy_ground_center_1)){
+        vspeed -= 10;
+    }
+    
+    if (self.pressed_up &amp;&amp; place_meeting(x, y+1, obj_icy_ground_center_14)){
+        vspeed -= 10;
+    }
+    
+    if (self.pressed_up &amp;&amp; place_meeting(x, y+1, obj_icy_ground_left_1)){
+        vspeed -= 10;
+    }
+    
+    if (self.pressed_up &amp;&amp; place_meeting(x, y+1, obj_icy_ground_left_2)){
+        vspeed -= 10;
+    }
+    
+    if (self.pressed_up &amp;&amp; place_meeting(x, y+1, obj_icy_ground_right_1)){
+        vspeed -= 10;
+    }
+    
+    if (self.pressed_up &amp;&amp; place_meeting(x, y+1, obj_icy_ground_right_2)){
+        vspeed -= 10;
+    }
+} else {
+    if (self.pressed_up) {
+        y = y - spd;
+        image_speed = 0.05;
+    }
+    
+    if (self.pressed_down) {
+        y = y + spd;
+        image_speed = 0.05;
+    } 
+
+    // Player choice
+    if (self.pressed_j) {
+        self.choice = "Split";
+    }
+
+    if (self.pressed_k) {
+        self.choice = "Steal";
+    }
+    
+    if (self.pressed_space) {
+        self.ready = true;
+    }
+}
+
+/* Stay Inside the Room*/
+
+if (x &gt; room_width || y &gt; room_height) {
+    show_debug_message(self.name + " is off screen!");
+    self.is_dead = true;
 }
 </string>
           </argument>
@@ -243,9 +281,7 @@ if (self.pressed_space) {
             <kind>1</kind>
             <string>//draw rectangle with personal score
 draw_set_font(font1);
-draw_set_color(c_gray);
-draw_rectangle(352,50,500,90,0);
-draw_set_color(c_black);
+draw_set_color(c_white);
 str_score = "Your score is: " + string(self.points);
 draw_text_ext(
 424, //x
@@ -259,10 +295,14 @@ str_score, //str
 //draw self with name/status
 draw_self();
 
-draw_set_color(c_black);
+draw_set_color(c_white);
 draw_set_halign(fa_center);
 draw_text(x,y-35,self.name);
-draw_text(x,y-50,self.choice);
+if (room == 5) {
+    // draw_text(x,y-50,self.choice);
+} else {
+    draw_text(x,y-50,self.choice);
+}
 </string>
           </argument>
         </arguments>

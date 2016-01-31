@@ -5,6 +5,7 @@
   </Configs>
   <NewExtensions>
     <extension index="0">extensions\Multiplayer - GMnet ENGINE</extension>
+    <extension index="1">extensions\Mine Tileset</extension>
   </NewExtensions>
   <sounds name="sound"/>
   <sprites name="sprites">
@@ -26,11 +27,63 @@
     <sprite>sprites\htme_spr_door</sprite>
     <sprite>sprites\spr_click_tile</sprite>
     <sprite>sprites\sprite14</sprite>
+    <sprites name="mine_tileset">
+      <sprites name="ground">
+        <sprites name="left">
+          <sprite>sprites\spr_ground_left_1</sprite>
+          <sprite>sprites\spr_ground_left_2</sprite>
+          <sprite>sprites\spr_ground_left_3</sprite>
+          <sprite>sprites\spr_ground_left_4</sprite>
+          <sprite>sprites\spr_ground_left_5</sprite>
+          <sprite>sprites\spr_ground_left_6</sprite>
+          <sprite>sprites\spr_ground_left_7</sprite>
+          <sprite>sprites\spr_ground_left_8</sprite>
+          <sprite>sprites\spr_ground_left_9</sprite>
+          <sprite>sprites\spr_ground_left_10</sprite>
+          <sprite>sprites\spr_ground_left_11</sprite>
+          <sprite>sprites\spr_ground_left_12</sprite>
+        </sprites>
+        <sprites name="right">
+          <sprite>sprites\spr_ground_right_1</sprite>
+          <sprite>sprites\spr_ground_right_2</sprite>
+          <sprite>sprites\spr_ground_right_3</sprite>
+          <sprite>sprites\spr_ground_right_4</sprite>
+          <sprite>sprites\spr_ground_right_5</sprite>
+          <sprite>sprites\spr_ground_right_6</sprite>
+          <sprite>sprites\spr_ground_right_7</sprite>
+          <sprite>sprites\spr_ground_right_8</sprite>
+          <sprite>sprites\spr_ground_right_9</sprite>
+          <sprite>sprites\spr_ground_right_10</sprite>
+          <sprite>sprites\spr_ground_right_11</sprite>
+          <sprite>sprites\spr_ground_right_12</sprite>
+        </sprites>
+        <sprites name="center">
+          <sprite>sprites\spr_ground_center_1</sprite>
+          <sprite>sprites\spr_ground_center_2</sprite>
+          <sprite>sprites\spr_ground_center_3</sprite>
+          <sprite>sprites\spr_ground_center_4</sprite>
+          <sprite>sprites\spr_ground_center_5</sprite>
+          <sprite>sprites\spr_ground_center_6</sprite>
+          <sprite>sprites\spr_ground_center_7</sprite>
+          <sprite>sprites\spr_ground_center_8</sprite>
+          <sprite>sprites\spr_ground_center_9</sprite>
+          <sprite>sprites\spr_ground_center_10</sprite>
+          <sprite>sprites\spr_ground_center_11</sprite>
+          <sprite>sprites\spr_ground_center_12</sprite>
+          <sprite>sprites\spr_ground_center_13</sprite>
+          <sprite>sprites\spr_ground_center_14</sprite>
+          <sprite>sprites\spr_ground_center_15</sprite>
+          <sprite>sprites\spr_ground_center_16</sprite>
+          <sprite>sprites\spr_ground_center_17</sprite>
+        </sprites>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
     <background>background\pretitle_bg</background>
     <background>background\title_bg</background>
+    <background>background\icy_bg</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -256,6 +309,16 @@
     <object>objects\Play</object>
     <object>objects\obj_fade</object>
     <object>objects\obj_game_logic</object>
+    <object>objects\obj_icy_ground_left_8</object>
+    <object>objects\obj_icy_ground_left_11</object>
+    <object>objects\obj_icy_ground_left_1</object>
+    <object>objects\obj_icy_ground_left_2</object>
+    <object>objects\obj_icy_ground_center_14</object>
+    <object>objects\obj_icy_ground_center_1</object>
+    <object>objects\obj_icy_ground_right_1</object>
+    <object>objects\obj_icy_ground_right_2</object>
+    <object>objects\obj_icy_ground_right_11</object>
+    <object>objects\obj_icy_ground_center_6</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\pretitle_room</room>

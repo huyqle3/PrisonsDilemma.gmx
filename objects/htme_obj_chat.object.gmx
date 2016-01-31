@@ -147,7 +147,7 @@ var offset = size*20;
 for (var i = 0; i &lt; size; i++)
 {
     var line = ds_list_find_value(self.output, i);
-    draw_set_color(c_black);
+    draw_set_color(c_white);
     draw_text(50, bottomLine-offset+i*20, line);   
 }
 
