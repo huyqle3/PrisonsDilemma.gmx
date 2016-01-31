@@ -35,7 +35,6 @@ self.pressed_k = false;
 self.pressed_space = false;
 self.status = "  TBD";
 self.choice = "TBD";
->>>>>>> a41902409ceeeca30572fdc63315a7652a0ceb9b
 self.points = 0;
 self.is_host = global.is_host;
 self.ready = false;

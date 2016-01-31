@@ -35,13 +35,12 @@ for (var i = 0; i &lt; playerlist_size; i++) {
     var player = ds_list_find_value(playerlist, i);
     var instance = htme_findPlayerInstance(obj_player, player);
     
-<<<<<<< HEAD
     
     var ready_str = "Not ready...";
     if (instance != -1)
     {
         var name = (instance).name;
-        var status = (instance).status;
+        var choice = (instance).choice;
         var ready = (instance).ready;
         var _image_blend = (instance).image_blend;
         
@@ -53,13 +52,6 @@ for (var i = 0; i &lt; playerlist_size; i++) {
     }
     else
     {
-=======
-    if (instance != -1) {
-        var name = (instance).name;
-        var choice = (instance).choice;
-        var _image_blend = (instance).image_blend;
-    } else {
->>>>>>> a41902409ceeeca30572fdc63315a7652a0ceb9b
         var name = "(Other room)";
         var choice = "TBD";
         var _image_blend = c_gray;
@@ -70,18 +62,10 @@ for (var i = 0; i &lt; playerlist_size; i++) {
     
     // Draw player name
     draw_set_colour(c_black);
-<<<<<<< HEAD
        
-    var print_str = name + "  -  " + ready_str;
+    var print_str = name + "  -  " + ready_str + "  -  " + choice;
     draw_text(65+string_length(name)*3, (i)*20+62, print_str);
-    //draw_text(65+string_length(name)*13, (i)*20+62, status);
-    
    
-    //draw_text(65+string_length(name)*30, (i)*20+62, ready_str);
-=======
-    draw_text(65+string_length(name)*3, (i)*20+62, name);
-    draw_text(65+string_length(name)*13, (i)*20+62, choice);
->>>>>>> a41902409ceeeca30572fdc63315a7652a0ceb9b
 }
 </string>
           </argument>

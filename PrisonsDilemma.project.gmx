@@ -251,9 +251,6 @@
     <object>objects\htme_obj_chat</object>
     <object>objects\obj_ctrl_round</object>
     <object>objects\countdown</object>
-    <object>objects\obj_master_timer</object>
-    <object>objects\obj_host_timer</object>
-    <object>objects\obj_client_timer</object>
     <object>objects\htme_obj_door</object>
     <object>objects\Play</object>
     <object>objects\obj_fade</object>
