@@ -256,6 +256,7 @@ if (room == 5) {
 if (x &gt; room_width || y &gt; room_height) {
     show_debug_message(self.name + " is off screen!");
     self.is_dead = true;
+    audio_play_sound(pastry_death, 10, false);
 }
 </string>
           </argument>
@@ -284,6 +285,30 @@ if (x &gt; room_width || y &gt; room_height) {
 // x += 0.1*(x - other.x)
 x += 1*(x - other.x)*multiplier
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>211</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>pastry_collision</sound>
+          </argument>
+          <argument>
+            <kind>3</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>

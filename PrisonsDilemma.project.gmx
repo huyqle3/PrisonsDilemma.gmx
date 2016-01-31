@@ -7,7 +7,14 @@
     <extension index="0">extensions\Multiplayer - GMnet ENGINE</extension>
     <extension index="1">extensions\Mine Tileset</extension>
   </NewExtensions>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\main_theme</sound>
+    <sound>sound\loop1</sound>
+    <sound>sound\loop2</sound>
+    <sound>sound\pastry_rap</sound>
+    <sound>sound\pastry_death</sound>
+    <sound>sound\pastry_collision</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_player1</sprite>
     <sprite>sprites\spr_player2</sprite>

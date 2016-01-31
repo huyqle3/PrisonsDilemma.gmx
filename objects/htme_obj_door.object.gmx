@@ -39,6 +39,7 @@ if (isLocal &amp;&amp; keyboard_check_pressed(ord("W"))) {
     var dest = rm_lvl_two;
     if (room == rm_lvl_two) dest = rm_lvl_one;
     room_goto(dest);
+    audio_stop_sound(loop1);
 }
 </string>
           </argument>
