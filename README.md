@@ -7,10 +7,15 @@ Four sinners who have been transformed into breakfast pastries upon eternal damn
 ### Credits
 
 Andrew Ton: Game Design and Character Sprite
+
 Andy Shen: Programming, Game Design
+
 Tushar Swamy: Programming, Game Design, and Ingame Chat
+
 Huy Le: Programming and 2nd Stage Game Design
+
 Simon Ton: Music and Audio
+
 No artist :(
 
 ### Download Link for Windows
